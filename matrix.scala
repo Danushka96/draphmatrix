@@ -1,16 +1,23 @@
 var n:Int=scala.io.StdIn.readLine("Enter the Number of Nodes: ").toInt
 var m=new Array[Array[Int]](n)
+var q=new Array[String](n)
 
 for (i <- 1 to n){
+  var v=scala.io.StdIn.readLine("Enter Vertex: ")
+  q(i-1)=v
   var p=new Array[Int](n)
   m(i-1)=p
 }
 
 def Inputme(){
-  println("Enter i and J value")
-  var ii:Int=scala.io.StdIn.readLine("Enter the i value: ").toInt
-  var jj:Int=scala.io.StdIn.readLine("Enter the j value: ").toInt
+  println()
+  println("Enter Vertex in order to the connection")
+  var vi:String=scala.io.StdIn.readLine("Enter the (vi) vertex: ")
+  var vj:String=scala.io.StdIn.readLine("Enter the (vj) vertex: ")
   var valu:Int=scala.io.StdIn.readLine("Enter the edge Value: ").toInt
+
+  var ii=q.indexOf(vi)
+  var jj=q.indexOf(vj)
 
   m(ii)(jj)=valu
 }
